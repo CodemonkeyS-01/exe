@@ -61,7 +61,8 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-      so = people.sort()
+      so = people.sort(function(a,b){return a.split(',')[1].charCodeAt(1) > b.split(',')[1].charCodeAt(1)? 1:-1})
+
       console.log(so)
     // 8. Reduce Exercise
     // Sum up the instances of each of these
@@ -71,11 +72,12 @@
       if(!obj[n]){
         obj[n] = 1
         return n
-      }else{
-        return false
-      }
-    }
-    done = data.reduce((acc,cur)=>check(),[])
+      }else return ''
+    }    
+        
+    
+    done = []
+    data.reduce((acc,cur)=>acc.push(check()),[])
     console.log(done)
 
   </script>

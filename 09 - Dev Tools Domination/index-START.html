@@ -19,29 +19,65 @@
     }
 
     // Regular
-
+   console.log('hello')
     // Interpolated
+    console.log('I am a %s string', '+poo')
 
     // Styled
+    console.log('%c I am green', "color: green; font-size: 50px; background-color: black")
 
     // warning!
-
+    console.warn('Oh,Nooooo');
+    
     // Error :|
-
+    console.error('shit')
     // Info
+    console.info('hyppo kills a lot of people')
 
     // Testing
-
+    const p = document.querySelector('p')
+    
+   // console.assert(p.classList.contains('ouch'), 'that is wrong')
+    
+    
     // clearing
-
+    console.clear()
     // Viewing DOM Elements
+    console.log(p)
+    console.dir(p)
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.group(`${dog.name}`)
+      console.log(`This is ${dog.name}`)
+      console.log(`${dog.name} is ${dog.age} years old`)
+      console.log(`${dog.name} is ${dog.age * 7}dog years old`)
+      console.groupEnd(`${dog.name}`)
+    })
 
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`)
+      console.log(`This is ${dog.name}`)
+      console.log(`${dog.name} is ${dog.age} years old`)
+      console.log(`${dog.name} is ${dog.age * 7}dog years old`)
+      console.groupEnd(`${dog.name}`)
+    })
     // counting
 
-    // timing
+    console.count("Wes")
+    console.count("Steve")
+    console.count("Wes")
 
+
+
+    // timing
+    console.time('fetching data')
+    fetch("https://google.com")
+      .then(() => {
+        console.timeEnd('fetching data')
+      })
+
+      console.table(dogs)
   </script>
 </body>
 </html>

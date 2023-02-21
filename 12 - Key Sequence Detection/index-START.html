@@ -8,6 +8,19 @@
 </head>
 <body>
 <script>
+  const pressed = []
+  const secreteCode = "hafunny"
+
+document.addEventListener("keyup", (e) =>{
+  
+  pressed.push(e.key)
+  fixPressed = pressed.slice(-secreteCode.length)
+  console.log(fixPressed)
+  if(secreteCode === fixPressed.join('')){
+    window.alert("wow, secrete Code was entered")
+    cornify_add()
+  }
+})
 </script>
 </body>
 </html>

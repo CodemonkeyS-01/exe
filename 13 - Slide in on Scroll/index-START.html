@@ -58,7 +58,30 @@
         if (callNow) func.apply(context, args);
       };
     }
+    
+    const pic = document.querySelectorAll(".slide-in")
 
+    function picIn(){
+      const whereWeAt = window.scrollY + innerHeight
+      pic.forEach(p => {
+        const half = p.offsetTop + p.height/2
+        const passed = window.scrollY < p.offsetTop + p.height
+        console.group('num')
+      console.log(whereWeAt)    
+      console.log(p.offsetTop + p.height)
+      console.groupEnd('num')
+        if(whereWeAt > half && passed){
+          p.classList.add("active")
+          
+        }else{
+          p.classList.remove("active")
+        }
+      }) 
+      
+
+    }
+
+    window.addEventListener("scroll", debounce(picIn),5000)
   </script>
 
   <style>

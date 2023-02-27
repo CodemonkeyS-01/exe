@@ -48,7 +48,26 @@
 
 <script>
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+const patern = /^the|in |a |oh/i
 
+let list = []
+
+const sorted = bands.sort((a, b) => a > b ? 1:-1)
+function test(n){
+  return n.sort((a, b) => a > b ? 1:-1)
+}
+console.log(sorted)
+console.log(test(bands))
+/*
+function sorted(n){
+  n.sort((a, b) => {
+    a > b ?  1 : -1
+  })
+  return result
+}
+sorted(bands)
+console.log(sorted(bands))
+ */
 
 </script>
 

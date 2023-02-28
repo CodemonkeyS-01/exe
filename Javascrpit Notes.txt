@@ -1,0 +1,1660 @@
+
+
+Table
+Concatenating strings:
+Need this backtick characters ``${}
+template literal
+For loop:
+iterate in an object
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130
+}
+let sum =0 ;
+for (let key in salaries){
+  sum += salaries[key];
+}
+
+
+Switch:
+switch(expression) === true
+
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+Property:
+
+3 Ways To Access Object Properties:
+1.Dot property accessor: object.property
+book.name
+2.Square brackets property access: object['property']
+book["name"] or book[name]
+
+Choose the square brackets property accessor when the property name is dynamic, i.e. determined at runtime.
+3.Object destructuring: const { property } = object
+const { identifier } = expression;
+
+const hero = {
+  name: 'Batman'
+};
+// Object destructuring:
+const { name } = hero;
+name; // => 'Batman'
+
+const { identifier1, identifier2, .., identifierN } = expression;
+
+3.2 Dynamic property name
+What makes the object destructuring even more useful is that you could extract to variables properties with the dynamic value:
+
+const { [expression]: identifier } = expression;
+
+const property = 'name';
+const hero = {
+  name: 'Batman'
+};
+// Object destructuring:
+const { [property]: name } = hero;
+name; // => 'Batman'
+
+Getting all property in the object
+var keys = Object.keys(obj);
+
+for (var i = 0; i < keys.length; i++) {
+    var val = obj[keys[i]];
+    // use val
+}
+
+Get information from useres:
+prompt()
+
+
+property function can not be executed
+********unsorted // no idea WTF is going on               Fixed, it is because missing () hahahahaa
+
+Method chaining
+user.login.logout => not working 
+
+need the function to return this 
+
+Simply way to creat an object:
+
+var user = {
+  name: ryu,
+  email: ryu@gmail.com
+  login(){
+    console.log(this.name + "has log in")
+}
+  logout(){
+    console.log(this.name + "has log out")
+}
+ 
+Updating a property 
+. notation 
+[""] squre bulket
+var = sth
+var = name 
+var = login  
+[var]
+can be changed later 
+
+________________________________________________________________________________12/12 悩みに悩む
+
+By useing Class capital letter for first word [U]ser
+put all the variables, properties, method together, inside a class 
+To get the var / method in the object, this.score = 0 is definted but score is not 
+
+class User{
+    constructor(email, name){
+      this.email = email
+      this.name = name
+      this.score = 0
+
+
+Inheritance in Class
+Use extends to creat inheritance
+class Admin extends User{}
+ 
+filter()
+The filter() method creates a shallow copy of a portion of a given array, 
+filtered down to just the elements from the given array that pass the test implemented by the provided function.
+
+deleteUser(user){
+      users = users.filter( u => u.eamil != user.email;)
+ var for new   array        i  if condition = true, send it back to var  
+    array
+
+Prototype is a hidden property in every object
+To access prototype property:
+User.prototype
+of the CONSTRUCTOR Method ONLY
+Not the object itself 
+
+User.prototype.logout = function(){
+  this.online = false;
+  console.log(this.email, "has logged out")
+}
+
+...args
+can take the arguments into an array called arg 
+
+// creating a new constructor function Admin, which uses the User method direct to this #new object created, with args 
+function Admin(...args){
+  User.apply(this, args)
+}
+
+try to code a inherited prototype
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++なるようになるさ
+
+Factory Function Introduction 
+Factories are simply plain old JavaScript functions that return objects for us to use in our code.
+const personFactory = (name, age) => {
+  const sayHello = () => console.log('hello!');
+  return { name, age, sayHello };
+};
+
+const jeff = personFactory('jeff', 27);
+
+console.log(jeff.name); // 'jeff'
+
+jeff.sayHello(); // calls the function and logs 'hello!'
+
+const 
+  const
+  const
+
+Comparing to constructor function
+// have to use  X = function(){}
+// have to use this.
+const Person = function(name, age) {
+  this.sayHello = () => console.log('hello!');
+  this.name = name;
+  this.age = age;
+};
+// new
+const jeff = new Person('jeff', 27);
+
+Object Shorthand
+const name = "Maynard";
+const color = "red";
+const number = 34;
+const food = "rice";
+console.log(name, color, number, food); // Maynard red 34 rice
+
+console.log({name, color, number, food});
+ // { name: 'Maynard', color: 'red', number: 34, food: 'rice' }
+
+Scope and Closure
+scope === variable access
+context === this
+
+var a = 1;
+window.a ===a 
+
+function foo(){
+  var b = 2;
+}
+
+No access inside the function
+
+let & var
+var is global 
+let keeps variable inside the block
+
+Closure
+closures allow us to create private variables and functions.
+const counterCreator = () => {
+  let count = 0;
+  return () => {
+    console.log(count);
+    count++;
+  };
+};
+
+const counter = counterCreator();
+
+counter is a closure. It has access to the variable count and can both print and increment it,
+ but there is no other way for our program to access that variable.  
+
+reduce
+is used to reduce the array to a single value and executes **a provided function** for each value of the array (from left-to-right) 
+and the return value of the function is stored in an accumulator. 
+
+function positiveSum(arr) {
+   return arr.reduce((a,b)=> a + l(b > 0 ? b : 0),0);
+}
+
+function repeatStr (n, s) {
+  return s.repeat(n);
+}
+
+_______________<=________not =<
+_______________________________________________________________________________________漢字が読めるから、プログラミングも書けるだろう
+
+Motivation#
+Debug
+type of error 
+
+Fizz&Buzz
+reverse string
+rock and scissor and paper
+function getRandomnumber()
+function(x,y){
+define x,y
+x = from other function 
+y = from other function 
+define other vars in the function
+define function in a function
+
+Rock, scissors, paper
+- a function to get random computer choices:
+[array] with choices
+array[Math.floor(Math.random()*(max-min + 1) )+min];
+                                         *don't understand why min is here
+
+function to play the game in single round:
+with 2 array []
+write a method to check if player won
+one of them is the Com choice otherone is player choice
+same array[i] will be the player winning condition
+use a for loop to check both array to see if the player won
+then return true, else false
+
+check draw
+check player won
+check else computer won
+
+
+
+----------------------------------------------------------------------------------他の人も大変辛い
+if 
+return 
+
+reduce code
+const number = (busStops) => busStops.reduce((rem, [on, off]) => rem + on - off, 0);
+argument [[10,0],[3,5],[5,8]]
+
+scopes and closures
+
+Rock scissors paper
+
+const rps = (p1, p2) => {
+  if (p1 === p2) return "Draw!";
+  var rules = {rock: "scissors", paper: "rock", scissors: "paper"};
+  if (p2 === rules[p1]) {
+    return "Player 1 won!";
+  }
+  else {
+    return "Player 2 won!";
+  }
+};
+
+Put things in an object{ will return key and value)
+console.log(name, color, number, food); // Maynard red 34 rice
+console.log({name, color, number, food});
+ // { name: 'Maynard', color: 'red', number: 34, food: 'rice' }
+
+The hasOwnProperty() method returns a boolean indicating whether the object has the specified property as its own property (as opposed to inheriting it).
+
+** Have no idea how to put string in a array FFFFFFFF
+.split()
+
+continue  in a for loop
+
+different between constructor function and factory function
+factory return object, which they don't share a prototype inheritate
+just a function 
+no new key word
+more fixible 
+data privacy
+less bug
+
+constructor creat a prototype inheritate 
+
+classes 
+just easier way to use constructor 
+
+____________________________________________________________________________________   簡単なことを舐めるな
+
+Js.Documentation 
+legit comment 
+
+linters 
+ESLint
+
+samll function chunks 
+
+write test
+
+visual control git
+
+commit messages
+
+varible names
+
+This*******s
+
+dynamic, value keep changing depend on the situation whoelse is involved
+
+function.prototype.bind()
+whatever object has been passed to bind() will be used as the value of this inside 
+the function 
+const meTalk = talk.bind(me)
+talk.bind(me)()
+
+.call 
+function.call(thisobject, other argument to the method)
+passing object with different argument 
+
+.apply
+same with .call but send all arguments in an object 
+
+above is talking about regular functions
+
+constructor function 
+
+call back functions
+are function that you passing to another function and they get excuted with a total differently contacts
+
+Using this in a call back function return window object
+there are two ways to fix this
+1.bind this to the function  
+2.use arrow function 
+arrow function ??????
+
+exe:
+function removeExclamationMarks(s) {
+  let result = []
+  s = s.split("")
+  **split also creat a new copy 
+  for(let i=0; i<s.length;i++){
+    if (s[i] != "!"){
+      result.push(s[i])
+    }else{
+      continue
+    }**continue jump one round of the loop inside the block only
+  }
+  **join need a veriable to contain the new string
+  result = result.join("")
+  return result;
+}
+other solution
+function removeExclamationMarks(s) {
+  return s.replace(/!/gi, '');
+}
+
+if conditon statement  Ternary Operator
+const areaOrPerimeter = function(l , w) {
+  return l == w ? l*w : 2*(l + w)
+};
+
+
+Japanese Quit project 
+fail to follow, lack of knowlegde of html and arrow function 
+** back to arrow function first
+
+
+Arrow function 
+function types 
+1. Anonymous functions
+a function that you assign to a variable
+const sayHello = function(){
+  return "Hello"
+}
+2.call back function
+pass to another function as a parameter, also a anonymous function expression too
+setTimeout(function(){
+  return "hello"
+})
+3.Named Functions
+like factory function 
+function sayHello(){
+  return{}
+}
+
+or constructor function 
+function Person(n){
+  this.n = n 
+}
+they come with their own name infront of their function
+
+4. object Method
+const me ={
+  sayHello: function(){}
+}
+
+5. Generator  function
+who knows wtf is that
+
+______________________________________________________________________________尽くして天命を待ち
+review This & 
+
+start arrow function
+you can't have a named arrow function
+have to sign it with a varible like anonymous function 
+
+1.Aesthetics
+
+2.Scope-binding with this
+
+In regular function bind with the this object
+
+but in arrow function 
+Inside method function used this keyword     should not use arrow - it bind to window
+
+
+** object don't create a binding with this, function do
+
+don't use arrow function in object methods, prototype, constructors, envent handlers
+in strict mode
+
+
+var = array.push(n)
+returns the new length of the array.
+
+array.push(n).shift(n).unshift(n).pop(n)
+don't need to add a new variable. The function change the array and return the length of new array
+
+.split()
+.join()
+both create a new copy of array, have to save them in a variable
+
+
+
+different between method call and function
+[1,5].join(',') is a method call
+hello("world") is a function invocation 
+
+** call back function map()
+don't know how to use it 
+
+
+
+____________________________________________________________________焦りは禁物
+.reduce
+to add accumulate numbers
+
+.map (value, index, array readonly)
+do a function on each element 
+
+higher order function is a function that accept other function as parameter / returns a function 
+
+fn = function(var){}
+timeout(fn) / timeout(function(){})
+
+do not use fn()
+it will pass the return value of that function
+
+array.filter()
+
+first order function 
+
+for loop can also do the same thing but can't be changed
+not reusable
+
+Higher order function
+looking up the value or holding on the reference for future use
+
+Closure remember the the outer function scope even after creation time
+
+when assigning a function it should not be invotcated  
+
+need to return a function  
+
+HTML 
+element <p></p>
+element in element
+<div> Parent
+<p></p> Siblings  Childen
+<h></h> Siblings  
+</div> 
+
+The DOM
+
+Display type
+Inspect at the website 
+
+<a herf ="google.com"> Link To Google </a>
+<header>
+	<nav>
+		<ul>
+			<li>Style</li>
+		</ul>
+	</nav>
+</header>	
+Struction make them readable 
+Code Organizatio 
+Flexibility  
+
+css
+save the styling command
+<link rel="stylesheet" href="Sono.css">
+
+callback function 
+function reverseWords(str) {
+  const re = function (word){
+    return word.split("").reverse().join("")
+  }
+  return str.split(" ").map(re).join(" ")
+}               **call back function will take the element as parameter if there is just one parameter
+____________________________________________________________________________努力はどれだけしても足りないんだよ
+
+Class selector & ID
+Element selector 
+.Class selector{
+	color: blue;
+}
+
+# ID selector{
+	color: red;
+}
+ 
+set color
+HEX and RGB
+
+hearder, footer{
+}
+
+absolute value
+**px
+in
+cm
+mm
+pt
+
+relative value
+responsive web design
+percenage
+em 
+rem
+
+margin[border[padding[content]]]
+
+padding top, middle, right
+solid 
+
+box model 
+
+custom fonts
+google font
+
+_______________________________________________________気分が乗らない?
+<div>
+tag is used as a container for HTML elements
+textContent 
+innerText
+
+const div = document.creatElemrnt("div")
+div.innerHTML = imgInputor("rock.jpg", "rock", 150)
+body.append(div)
+
+creat a div then The innerHTML property sets or returns the HTML content (inner HTML) of an element.
+append to body
+
+Wanted to put them in an Object then use a for loop to generate them 
+but 
+
+when you pass a var to a function it passes the primative not the var 
+but if you pass an obj, it works
+exp:
+function incrementAge(age){
+return age += 2 
+}
+age =10 
+
+it is still 10 
+
+but if you pass an object me = {age:10} to 
+function incrementAge(user)1{
+user.age = user.age +1}
+me.age = 11
+
+HTML creat sth with id and class then 
+const sth = document.querySelector ("#id)
+const btn = document.querySelectorAll(".class")
+button.forEach(button => button.addEventListener("click",()=>{
+do stuff here
+}));
+
+
+五指棋
+
+_______________________________________ In local Ameraican language, Vegaterian are those who can't hunt 
+
+function toUpper(string) {
+  return string.toUpperCase();
+}
+
+const cats = ['Leopard', 'Serval', 'Jaguar', 'Tiger', 'Caracal', 'Lion'];
+
+const upperCats = cats.map(toUpper);
+
+console.log(upperCats);
+write a function with has a parameter 
+new const = array or obj .map(function name)
+
+filter()
+function lCat(cat) {
+  return cat.startsWith('L');
+}
+
+const cats = ['Leopard', 'Serval', 'Jaguar', 'Tiger', 'Caracal', 'Lion'];
+
+const filtered = cats.filter(lCat);
+
+console.log(filtered);
+// [ "Leopard", "Lion" ]
+
+same
+
+for loop 
+for (const cat of cats) {
+  console.log(cat);
+}
+
+.focus()
+
+const searchName = input.value.toLowerCase();
+input.value = '';
+save the input value as lowercase, then set it back to zero
+
+break and continue
+
+DOM
+querySelectorAll
+is not give back an array
+,which is “nodelist”
+
+document.createElement(tagName, [options]) creates a new element of tag type tagName
+but won't put it to dom
+
+Append Elements
+parentNode.appendChild(childNode)
+parentNode.insertBefore(newNode, referenceNode)Adding Text Content
+div.textContent = 'Hello World!'                               
+// creates a text node containing "Hello World!" and
+// inserts it in div
+
+Adding HTML Content
+div.innerHTML = '<span>Hello World!</span>';                   
+// renders the HTML inside div
+
+Javascript injection 
+innerHTML
+and innerText
+
+Asynchronous
+**********************
+Don't understand counter logic, go back to scrope and closure and callback function
+**********************
+The parseInt method parses a value as a string and returns the first integer.
+
+
+-------------------------------------------------------------------どうでもいいことを話す
+Higher order function can create and return function that hold on the value
+
+CSS sytling 
+
+flex box 
+
+CS 50
+fail to get in free course 
+
+counter closure 
+return funtions in an object  (factory function)
+they can be call back later and the value still stored in outer function,which can 
+be accessed by inner function only
+ 
+google fount   
+
+______________________________________________________さなぎなんて、無理です
+
+map is used to change the value inside array
+
+const number = [ 1, -1, 2, 3];
+const filtered = number.filter(n => n>=0); 
+const items = filtered.map(n => `<li>`+ n +`</li>`
+const html = '<ul>'+items.join('')+'</ul>';
+
+console.log(html)
+
+javascript consider {} as code block
+if we want to return an object,
+need to put a () on it
+({value:n})
+
+use .sort to get the accenting order
+
+document.querySelector('button').onclick = count;
+
+not calling count/ just naming it
+it works because javascript support funtional programming,
+functions can be treated as value themselves  
+
+autofocus 
+cursor should be set inside that input as soon as the page is loaded
+
+#name to find id
+
+.value attribute of an input to find what is typed in
+_______________________________________________________________________________進のいつも怖くて
+<select></select>
+
+function optionMaker(name){
+  template =  document.createElement('option') 
+  template.innerHTML = name
+  
+  document.querySelector('select').insertBefore(template, document.querySelector("option"))
+}
+  
+optionMaker("Red")
+
+
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelector('select').onchange = function(){
+    document.querySelector("#h1").style.color = this.value
+    console.log(document.querySelector("#h1").style.color)
+  }
+})
+
+*****WTH myster
+somehow inserted button get the this.value = red  
+
+
+.toFixed(3)
+
+.[variable]
+
+library
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿自分に信じられないの？
+wasted a lot of time tried to print out the key and value in an array of object
+
+___________________________________________________________________had one day holiday, Nothing has been done
+
+used a nested forloop to print out the value and key in library array
+there is a long loading time for the page ?>????? promise?
+haven't fix the button problem
+
+shorthard
+1. ?. optional chaining for nested objects
+Obj?.obj1?.property
+if it does not exsist, won't break it
+
+2.let val = userlogin() || "Guest user"
+
+if there is a falsy value on the left, will return the default on the rhs
+
+3.let val = null ?? "nullish"  
+simular one, but only null or undefined 
+
+4.condition && function_exp
+conditional rendering
+
+5.val = parint("264");
+val2 = +"264"
+
+6.[a, b, c] = [10, 20, 30]
+
+let x=10
+
+
+semicolon error:
+when the next line starts with code that breaks the current one (code can spawn on multiple lines)
+when the next line starts with a }, closing the current block
+when the end of the source code file is reached
+when there is a return statement on its own line
+when there is a break statement on its own line
+when there is a throw statement on its own line
+when there is a continue statement on its own line
+
+be careful when you define sth or use return
+
+
+array destructuring
+
+arraw function use this.keyword differently
+
+traditional function define.this where the function was called
+it redefine the .this 
+
+inside object as method should not use arrow function
+
+object don't creat binding to this, function do
+
+when using call back fucntion, this refered to the fucntion and the function binded to the object on the left
+
+______________________________________________________________おじいさんから教わらないか　プログラミングを　　　　
+
+
+when we in are eventhandler, this refers to whatever element who receive the event
+
+--------------------------------------------------------------------------辿り着く・たどりつく
+
+writing a receipt library
+.onsubmit needs a return false to prevent reflashing
+
+writed a div in the obj
+and a function used this.parentelement.style.display = 'none' to hide the div
+
+___________________________________________________________________________自分に甘やかしすぎじゃない
+
+for(let var in list)??
+
+filter??
+function in the filter function
+
+wrote a function take a work varible that run through vowel list 
+if the lowercase equal to vowel then return false
+else return true
+
+filter take each item in the array. pass to the function
+if it return false, filter out
+if it is true, put it to the NEWly created array
+array.filter(function_name)   
+
+function disemvowel(str) {
+  return str.replace(/[aeiou]/gi, '');
+}
+"[aeiou]" tells the replace function to look for any of these characters and
+ "gi" are flags that tells the function to look for match over the entire string 
+(will otherwise break at the first match), this is the "g" flag. And the "i" flag 
+tells it to match case insensitively. So, it would also match, A , E and so on.
+
+CSS selector and priority
+
+When using a for loop, 2 variable can be set at the same time
+
+function SeriesSum(n) {
+  for (var s = 0, i = 0; i < n; i++) {
+    s += 1 / (1 + i * 3)
+  }
+  
+  return s.toFixed(2)
+}
+__________________________________________________________________________________このままでいいのか
+
+How to use Github
+and some basic ideas about what is it
+
+[^abc]	Not any of the characters a, b, or c
+[^A-Z]	Not any character from uppercase A to uppercase Z
+[^a-z]	Not any character from lowercase a to lowercase z
+[^A-z]	Not any character from uppercase A to lowercase z
+
+The "g" modifier specifies a global match. A global match finds all matches (compared to only the first).
+
+let text = "Is this all there is?";
+let pattern = /[^A-m]/g;
+let result = text.match(pattern);
+
+
+innerHTML Vs .textContents
+textContents is all text contained by an element and all its children that are for formatting purposes only.
+ innerText returns all text contained by an element and all its child elements. innerHtml returns all text, 
+including html tags, that is contained by an element.
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿私は一生懸命にここに来たのに
+
+Array.form() 
+Array.from() method to create an array from an array-like or iterable object.
+Array.from(target [, mapFn[, thisArg]])
+
+NO IDEA WHAT is that  £|£*U£*£*£
+
+Tic tac toe game copied from youtube
+
+_______________________________________________________________先後考えちゃため
+Tiｃ tac toe game js file redone 
+code wars fendemental
+--------------------------------------------------------------少なくとも、じわじわ進む
+[A-z] included puncturation 
+/^[a-zA-Z]*$/
+
+*$ 
+^
+
+text = text.match(/[a-zA-Z]/g)
+.match returned null
+
+ text = text.split("").filter(char => /[a-zA-Z]/.test(char))
+
+
+function alphabetPosition(text) {
+  var result = "";
+  for (var i = 0; i < text.length; i++){
+    var code = text.toUpperCase().charCodeAt(i)
+    if (code > 64 && code < 91) result += (code - 64) + " ";
+  }
+
+  return result.slice(0, result.length-1);
+}
+
+
+python basic
+
+found out that I didn't quite get the concept of class and  Constructor function  
+
+___________________________痛みを伴わない教訓は意味がない、
+google search project
+
+how to deal with big numbers eg. 9.00032192172169+e59
+
+___________________________________________________人は何かの犠牲なしには何も得ることはできないのだから
+combind indexof and slice() to remove a specific item 
+but when they are in a row, it updated a new index
+can be solved by using filter to filter out target item 
+newarray = oldarray.filter(function (x) {if(x == "target"){return false //sth not inculde in the new array) } else return true}
+
+The trim() method removes whitespace from both ends of a string and returns a new string, 
+without modifying the original string.
+
+install git and setup
+
+function greet(lang) {
+	return langs[lang]||langs['english'];
+
+_____________________________________________________________A TV show about a female spy ????
+
+codewars
+for(let i in str){
+  if(str[i] == letter){
+	count++}}
+i is a number str[i] is the actual value
+
+use an array to define more than one variables 
+
+.replace is also useful to screen out unwanted str
+
+____________________________________________しかし、その痛みに耐え、乗り越えた時、人は何ものに負けない、強靭な心を手に入れる
+
+In-person event
+Old Trafford Stadium, Manchester United, Sir Matt Busby Way, Old Trafford, Stretford,, Manchester, ENG M16 0RA GB
+Date and time
+18 Jan 2023 | 10–13
+Estimated duration
+30 minutes
+
+Django set up 
+Git set up
+___________________________________俺の敵は大体俺で。散々邪魔して、足を引っ張り続けたの結局俺でした
+while (a < b) {
+    if (x[a] != x[b-1])
+      return false
+    a++
+    b--
+last item in an array
+
+Django set up 
+_______________________________________________________________蒔かぬ種は生えぬ｜まかぬたねははえぬ
+prefix templates with a directory name
+namespace
+to make sure we have multiple different apps
+
+to plug in a variable in Django
+{{ }}
+to plug in a logic in Django
+{% %}
+Django needed a {% endif %} tag at the end
+
+Static file 
+because it is not unchanging
+
+Install app in setting 
+setup urlpatterns 
+path take "<str:name>" any string entered as a varible
+views.greet pass it to greet function in views
+name="greet" url name
+
+views 
+def greet(request, name):
+	return render(request, "hello/greet.html",{
+	"name":name.capitalize() use dictionary syntest to pass variable name to http file
+greet.html 
+{{ name }} to use the variable from views
+
+善を軽んずるな、水が一滴ずつでも滴り落ちるならば、水瓶でも満たされる｜ぜんをかろんずるな、水がいってきずつでもしたたりおちならば、みずがめでもみたされる
+method.get() get a picticular page
+method.post()generally used for submitting form data, it dosen't include parameters inside Url
+
+client side validation and serverside validation
+
+request.method == "POST"
+form.isValid()
+form.cleaned_data["task"]
+HttpResponseRedirect(reverse("tasks:index"))
+request.session["tasks"]
+google inconito
+
+return words.split(' ').sort(function(a, b){
+      return a.match(/\d/) - b.match(/\d/);
+   }).join(' ');
+
+learn how to use SQL tmw 
+__________________________________________________そうな時に習慣を崩さないと習慣を守って、一滴づつ
+cd.. go back the pervious file 
+
+Work flow
+use Git creat a new repositories
+git clone http link
+django-admin startproject Project_name
+python manage.py startapp app_name
+
+to project setting install app
+to app views refine index
+creat a file called urls.py
+in urls.py 
+from django.urls import path
+from . import views
+creat a list called urlpatterns
+urlpatterns = [
+     path("", views.index, name="index")
+ ]
+go to project urls
+setup the path
+set path('', include("rec_app.urls")
+
+done
+git commit -am "" to commit all added file
+
+_______________________________________________________________英語と日本語の通訳家になろう
+
+function DNAStrand(dna) {
+  return dna.replace(/./g, function(c) {
+    return DNAStrand.pairs[c]
+  })
+}
+
+DNAStrand.pairs = {
+  A: 'T',
+  T: 'A',
+  C: 'G',
+  G: 'C',
+}
+
+String.prototype.replaceAt = function(index, character) {
+    return this.substr(0, index) + character + this.substr(index+character.length);
+};
+
+if(/^[A-Za-z]*$/.test(str[i]))
+
+__________________________________________________あるとこるに上がってくる
+python syntext 
+Class Flight(models.Model):
+__str__(self)
+
+how does it work? related_name
+
+Flight.object.get()??  sth like prototype?
+
+ManyToManyField
+
+followed the lecture to build flights app
+
+
+_________________________________________誠心誠意
+command in window to build a empty sql file
+ nul > receipe.sql
+go to file double click exe file to open sqlite3 
+creat table 
+
+_________________________________________________流れ落ちてしまえば楽なのに
+find a way to add img to database
+styling in static file
+
+may be toggle the ingredient and procedure by clicking
+
+https://www.youtube.com/watch?v=O5YkEFLXcRg&ab_channel=Codemy.com
+_______________________________________________________Are you planned full out?
+css file 
+containers 
+toggle between ingredient & procedure
+
+relational data base 
+foreign keys
+Many to Many relationship
+
+INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN
+__________________________You have to build calluses in your brain as the same way you build in your hands
+static file
+open folder in your app
+static/ app_name
+{% load static %}
+in layout
+<link rel="stylesheet" href="{% static 'app_name/styles.css' %}>
+
+_______________________________________________________Don't be afraid of the reflection of the mirror
+ buttons = document.querySelectorAll('button') ***here
+    
+    buttons.forEach(function(button){
+        button.addEventListener('click', function() {
+            window.alert("Congradurations, take a break")
+            console.log("Congradurations, take a break")
+        })})
+
+why it is not working??????????
+
+document.addEventListener('DOMContentLoaded', function(){
+        document.querySelectorAll('button').forEach(function(button){
+            button.onclick = function(){ ***here
+                window.alert("Congradurations, take a break")
+                console.log("Congradurations, take a break")
+            }})})
+    }
+
+print once???????
+
+buttons.forEach(function(button){
+        button.addEventListener('click', function() {***here
+            window.alert("Congradurations, take a break")
+            console.log("Congradurations, take a break")
+        })})
+
+print twice????
+
+VM61 receipe.js:1 connected
+receipe.js:1 connected
+
+__________________________________when Tragic in life happens, I don't fall apart
+relocated static file location 
+added procedure and use css to hide it
+
+finding out how to send the ID to css
+
+span {
+  display: block;
+}
+
+display: none;
+display: block;
+
+regex
+
+/[A-Z0-9]/.test()
+------------------------------立って歩け　前へ進めあんたには立派な足がついてるじゃないか
+
+substr()
+
+const map = { M:1000, CM:900, D:500, CD:400, C:100, XC:90, L:50, XL:40, X:10, IX:9, V:5, IV:4, I:1};
+for (var i in map) {
+            while (num >= map[i]) {
+	      str += i;
+              num -= map[i];
+            }
+
+button.onclick = function(){  <-- why it is necessary?
+            displayControl(`ingredient_${this.dataset.id}`, `procedure_${this.dataset.id}`) <-- 
+
+button.onclick =  displayControl(`ingredient_${button.dataset.id}`, `procedure_${button.dataset.id}`)
+why it can't be this? have to use button? 
+
+Why static file is not up to date ?????
+
+wrote a function to take id then turnoff div display
+set a data-id on the button
+
+ 
+_______________________________________________日々の努力は嘘をつかない
+
+@keyframe grow
+
+animation by css
+0%{}
+100%{}
+
+intro of react
+
+keyboard shortcut
+ALT+mouse 
+CTRL + HOME / END
+Ctrl + mouse change variable 
+
+var x = v || 10;
+
+if(v){
+  var x = v;
+} else {
+  var x = 10;
+}
+
+function deleteNth(arr,x){
+  var obj = {}
+  return arr.filter(function(number){
+    obj[number] = obj[number] ? obj[number] + 1 : 1
+    return obj[number] <= x
+  })
+}
+
+function DNAtoRNA(dna) {
+  return dna.split("T").join("U");
+}
+
+function DNAtoRNA(dna) {
+  return dna.replace(/t/gi, 'U');
+
+REPLACEALLLLLLLLLLLLLLLLLLLLL
+
+property event
+________________________________________頑張れば叶う可能性があるわけです
+write a function for the element in array first
+then use forEach without ()
+
+while loop
+}
+spread operator
+
+className = {state.incorrect ? "incorrect" : ""}  
+
+CSS file not uploading
+CTRL F5
+
+event.target()**
+__________________________________________taking a few days break 
+parseInt()
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Backreferences
+
+Groups and backreferences
+No fucking idea
+________________________________ 才能の差は若干なりともあると言うのも認めます
+dynamic variable names
+
+eval() function
+
+function sevenBoom(arr) {
+	arr = arr.join('') 
+	const pattern = /7/
+	const found = arr.match(pattern) || ''
+	if (found.length > 0 ){ 	
+		return "Boom!"
+	}else{
+		return "there is no 7 in the array"
+	}
+}
+
+rexger 
+pattern = /7/ 
+	/[0-9]/g
+	/[A-Z]/gi
+arr.match(pattern)
+
+const = something() || return a empty string'' or []list
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿恥ずをかかさない生き方を選べばいいじゃない
+function isIsogram(str){
+	return new Set(str.toUpperCase()).size == str.length;
+}
+
+
+____________________________うまくいかないことが多いです。　で、その度にむかつくし、落ち込むし。。
+Hexdecimal literal 0x
+It is possible to make changes in CSS file at console
+the changes can be seen imedialty 
+
+The fill() method changes all elements in an array to a static value
+from start to end  and it modify the  original array
+Array(200).fill().forEach(addStar)
+
+texture mapping
+
+setting up three.js to practise javascripte 
+Math.random()
+
+new 
+
+const findOdd = (xs) => xs.reduce((a, b) => a ^ b);
+
+__________________________________でも、うまくいく喜びを知ってるから、また明日に向けて、いい準備をしようと
+CSS
+display: grid;
+grid-template-columns: repeat(12, 1fr)
+
+grid-column 2/8
+
+grid-colume: 2/ span 5;
+
+reduce(accumulator, current, index, array)
+exp
+
+array.reduce((total, num) => {
+   return total + num}, 0)
+}
+name = name?.toLowerCase()
+if(input before ?. is undefined or null. it will return a undefined value
+
+null coalescing operator (??)
+
+parent
+previousElementSibling
+nextElementSibling
+closet
+children 
+const parents = Array.from(grandparent.children)
+const parent = parents[0]
+const children = parentOne.children 
+
+____________________人って誰しもが上手くいかなかった時にとかに、ちょっと疑うと思うんですね
+recursive function 
+
+function re(n){
+  if(xxx){
+     dothis 
+     change n = xxx
+     return re(n)
+}{else 
+   return n}
+}
+re(para)
+
+
+typeof == "number"
+
+______________________________失敗って本当に過程ですね、必要な過程なんですよね
+doing Etch-A-Sketch to practise DOM manipulation
+
+higher order function purpose:
+Passing a function as an argument to another function
+Returning a function from another function
+
+bulletprint way to remove a Div
+EXP
+<div id="myDiv">test</div>
+var elem = document.getElementById("myDiv");
+elem.parentNode.removeChild(elem);
+
+_________________________________相変わらずの未熟で、頭がおかしいじゃないかってゆうぐらい前向きで
+function genColor(){
+    let r = Math.floor(Math.random()*256)
+    let g = Math.floor(Math.random()*256)
+    let b = Math.floor(Math.random()*256)
+    const code = r*65536+g*256+b
+    console.log(code.toString(16))
+    return "#"+code.toString(16)
+}
+Random Color from RGB to hex code
+toString(16) 
+
+parstInt(hex, 2)
+reverse
+
+_______________________________I can't be blind cause the blind lead the blind they all fall into ditch
+
+$- Dollar identifier
+identify as an object
+
+'$'is a short cut to the function ' document.getElementById()'
+
+regex = regular expression 
+These patterns are used with the exec() and test() methods of
+ RegExp, and with the match(), matchAll(), replace(), replaceAll(), search(), and split() methods
+
+MatchAll Parameters
+regexp
+A regular expression object, or any object that has a Symbol.matchAll method.
+
+If regexp is not a RegExp object and does not have a Symbol.matchAll method,
+ it is implicitly converted to a RegExp by using new RegExp(regexp, 'g').
+
+If regexp is a regex, then it must have the global (g) flag set, or a TypeError is thrown.
+
+matchAll 
+The matchAll() method returns an iterator of all results matching a string against a regular expression,
+ including capturing groups.
+
+____________________________
+
+             1
+          3     5
+       7     9    11
+   13    15    17    19
+21    23    25    27    29
+
+sum of n row = n**3  why????
+
+computed properties
+
+eventListener("transitioned", xxxx)
+
+key.classList.add("Classname")
+
+audio.play()
+audio.currentTime = 0 
+
+const audio = document.querySelector(`audio[data-key="${var}"])
+ 
+
+____________________________
+CSS transform and transition
+transform-origin 100%
+transform: rotate(90deg)
+set a function setDate
+const now = new Date()
+sencond = now.getSeconds()...
+
+querySelector pick the target 
+target.style.transform = `rotate(${var}deg)`
+
+Do not know how to remove the transition when it hits 60s
+
+CSS variable 
+
+querySelectorAll will give you a nodeList not an Array
+differences between nodeList and Array  
+Array with all the default method
+nodeList just have some of them 
+
+data-
+makeup sth in the html
+dataset is an object with everything with that data-
+
+Select entire document which is :root
+setProperty() of blur , base , spacing
+by using name="blur" , in the inputs
+
+It could be quite helpful if you use console.log() to check 
+if you getting the correct value before you complete the 
+function
+
+
+________________________________________
+.table instead of console.log
+
+Format can be like
+
+Const de = links
+			.map(link => link.textContent)
+			.filter(streetName => streetName.includes(‘de’)
+
+spilt(‘, ‘)
+
+
+Flex 1 means evenly distribute the extra space they have
+
+Need more information about flex box
+????
+
+Flex item can also be a flex container ????
+
+Transition ??
+
+No ideal about what is. // website last charater 
+.fetch()
+.then()
+
+push[…data] 
+
+How do you put a variable into a regular expression ??
+
+.match()
+You set a variable outside
+Const regex = new RegExp(wordinput, “g”)
+“g” = global
+‘i’ = insensitive 
+
+Write a function to return console.log(this.value) first
+, then put it to queryselector  see what is going on
+
+“Change” event only fire when go off the input
+“Keyup” 
+
+Get your data first, then your functionality in place,
+And then we worry about hooking it up to the eventListenser 
+
+return `
+    <li>
+      <span class="name">${place.city}, ${place.state}</span>
+      <span class="polulation">${place.population}</span>
+      </li>
+`)).join(‘’)
+
+const cityName = place.city.replace(regex, <span class="hl">${this.value}</span>)
+
+
+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
+
+________________________________________
+delete item in array 
+splice()
+slice()
+const newComments = comments.slice(0,index).concat(comments.slice(index+1))
+
+or
+
+const newComments = [
+		...comments.slice(0,index),
+		...comments.slice(index+1)
+]
+)
+_____________________________________
+function titleCase(title, minorWords) {
+  if(!title){
+    return ''
+  }
+  
+  title = title.toLowerCase().split(' ')
+  console.log(minorWords)
+  if(!minorWords){
+   return title.map(n=> n[0].toUpperCase()+n.slice(1)).join(' ') 
+  }
+  function trans(n){
+    const low = minorWords.toLowerCase()   
+    if(low.indexOf(n) != -1){
+      return n
+    }else return n[0].toUpperCase()+n.slice(1)
+  }
+  
+  return title.map(n=> title.indexOf(n) === 0 ? n[0].toUpperCase()+n.slice(1) : trans(n)).join(' ')   
+  
+  
+}
+
+why?????? indexOf() find a in "an the "
+
+
+struck at Canvas 
+the line is not following the mouse and can't use [] = [] to set variable
+wtf
+?????????
+haven't watch how to use hue  to change color
+
+ console. keywords
+
+_______________________________
+asserttion 
+assertion fail 
+console.assert(1===2, "that is wrong")
+
+.classList.contains()
+The contains() method returns true if a node is a descendant of a node.
+
+console.dir()
+show all the stuff lives in that element
+
+.table()
+on a [{},{},{}] with same keys
+
+_________________________________________
+const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]')
+
+store event in a varible
+
+inbetween = !inbetween (******)
+
+CSS __
+ Child items, or elements, can be placed inside and these are denoted by two underscores 
+following the name of the block like .btn__price { }
+
+CSS --
+modifiers can manipulate the block so that we can theme or style that particular component
+
+debug
+console.log() to see if it is connected 
+then log var to see what is comeing out
+
+or call it from console to see if it is working?
+
+
+[data-skip] means anything that have a data-skip element
+
+video[this.name] 
+=video.something send by user
+
+Pseudo-classes
+specifies a special state of the selected element(s)
+
+splice()
+The splice() method changes the contents of an array by removing or replacing existing elements 
+and/or adding new elements in place
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+// Inserts at index 1
+
+Negative index counts back from the end of the array — if start < 0, start + array.length is used
+- start from backward 
+
+cornify_add()
+
+________________________________________________
+Reference and copy 
+string, number, boolean they are copy 
+when array and object are used, they are reference
+
+to make a copy of array
+const team2 = players.slice()
+const team3 = [].concat(players)
+const team4 = [...players]
+const team5 = Array.from(players)
+
+for object
+Object.assign({},person,{number:99})
+const cap3 = {...person}
+
+it only does one level deep
+
+if you need to do it at all level, google clone 
+or 
+const dev2 = JSON.parse(JSON.stringify(wes))
+ 
+preventDefault()
+stop refeash the page when submit
+
+find the text was submited by a input
+this.querySelector('[name=item]')
+
+JSON.stringify() object to string
+JSON.parse() string to object
+
+e.target???
+
+
+
+
+ 

@@ -183,6 +183,22 @@
     </li>
   </ul>
 <script>
+function strTONum(n){
+  n = n.split(':')
+  let sec = Number(n[1])
+  sec += 60*Number(n[0]) 
+  return sec
+}
+
+const times = Array.from(document.querySelectorAll('[data-time]'))
+const timeNumber =times.map(n => n.dataset.time)
+const totalSec = timeNumber.reduce((a,b) => a + strTONum(b),0)
+const hours = Math.floor(totalSec / 3600)
+const minius = Math.floor(totalSec % 3600 /60)
+const seconds = totalSec%3600%60
+
+printHour = `${hours}-${minius}-${seconds}`
+console.log(printHour)
 </script>
 </body>
 </html>

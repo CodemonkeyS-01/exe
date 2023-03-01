@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Sort Without Articles</title>
   <link rel="icon" href="https://fav.farm/🔥" />
 </head>
+
 <body>
 
   <style>
@@ -41,35 +43,50 @@
       color: #ffc600;
       text-decoration: none;
     }
-
   </style>
 
   <ul id="bands"></ul>
 
-<script>
+  <script>
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
-const patern = /^the|in |a |oh/i
-
+const patern = /^the|in |an |oh,|a /i
+const text = document.querySelector('#bands')
 let list = []
 
-const sorted = bands.sort((a, b) => a > b ? 1:-1)
-function test(n){
-  return n.sort((a, b) => a > b ? 1:-1)
+function ObjGen(n){
+  let key = n.replace(patern,"").trim()
+  list.push({[key]: n})
 }
-console.log(sorted)
-console.log(test(bands))
-/*
-function sorted(n){
-  n.sort((a, b) => {
-    a > b ?  1 : -1
-  })
-  return result
-}
-sorted(bands)
-console.log(sorted(bands))
- */
 
-</script>
+bands.forEach(ObjGen)
+console.log(list)
+
+function sorted(n){
+return n.sort((a, b)=> Object.keys(a) > Object.keys(b)? 1:-1)
+}
+
+
+function textGen(){
+  text.innerHTML = sorted(list)
+  .map(band => `<li>${Object.values(band)}</li>`)
+  .join('')
+}
+
+textGen()
+
+    /*
+    function sorted(n){
+      n.sort((a, b) => {
+        a > b ?  1 : -1
+      })
+      return result
+    }
+    sorted(bands)
+    console.log(sorted(bands))
+     */
+
+  </script>
 
 </body>
+
 </html>

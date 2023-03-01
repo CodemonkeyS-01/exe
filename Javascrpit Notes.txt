@@ -1655,6 +1655,14 @@ JSON.parse() string to object
 e.target???
 
 
+-------------------------------------------1/3 
+ write functions to sort / replace
 
+ replace and trim and push it to the list in obj
 
+then sort it by the keys
+
+use map to list it in the innerHTML to create <li> element and join('')
+
+ 
  

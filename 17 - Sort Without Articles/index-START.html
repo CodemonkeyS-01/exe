@@ -55,10 +55,10 @@ let list = []
 
 function ObjGen(n){
   let key = n.replace(patern,"").trim()
-  list.push({[key]: n})
+  return {[key]: n}
 }
 
-bands.forEach(ObjGen)
+list = bands.map(ObjGen)
 console.log(list)
 
 function sorted(n){

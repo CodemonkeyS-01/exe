@@ -51,13 +51,21 @@ const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'N
 const patern = /^the|in |a |oh/i
 
 let list = []
+let obj = {}
+console.log('The Plot in You'.replace(patern, "wtf"))
+
+list = bands.map(function(w){
+  obj[w.replace(patern,"")] = w
+  return obj
+}
+)
+console.log(list)
 
 const sorted = bands.sort((a, b) => a > b ? 1:-1)
 function test(n){
   return n.sort((a, b) => a > b ? 1:-1)
 }
-console.log(sorted)
-console.log(test(bands))
+
 /*
 function sorted(n){
   n.sort((a, b) => {

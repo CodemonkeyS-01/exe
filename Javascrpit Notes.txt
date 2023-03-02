@@ -1654,7 +1654,28 @@ JSON.parse() string to object
 
 e.target???
 
+_______________________________
+In other languages, is it not common to access the varibles defined outside of the function
+that is what closure is
+Global variables are available in the function inside, even it is not accessable anymore.
 
+____________________________________  
 
+Array method needs a variable to save the results (exp map, sort)
 
+********
+Map()
+map() creates a new array from calling a function for every array element.
+
+map() calls a function once for each element in an array.
+
+map() does not execute the function for empty elements.
+
+map() does not change the original array.
+
+return an object ???
+
+forEach()
+
+The forEach() method executes a provided function once for each array element.
  

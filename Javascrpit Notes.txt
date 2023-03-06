@@ -1409,7 +1409,7 @@ matchAll
 The matchAll() method returns an iterator of all results matching a string against a regular expression,
  including capturing groups.
 
-____________________________
+____________________________I bully myself cause I make me do what I put my mind to
 
              1
           3     5
@@ -1705,3 +1705,17 @@ to move the span element showing in the document
 
 _________
  
+using queryselector to select the Nav with id
+writing function to insert a class into document.body
+add the animation in css
+.fixed-nav li.logo
+classname obj subclass
+
+offsetHeight
+offsetTop
+transform : scale(1)
+max-width: 500px
+some of them need px after it 
+
+________________-
+

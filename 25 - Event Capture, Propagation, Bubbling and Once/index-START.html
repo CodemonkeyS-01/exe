@@ -43,7 +43,12 @@
 
 <button></button>
 <script>
-
+const div = document.querySelectorAll("div")
+function sayhi(e){
+  console.log(this.classList.value)
+  e.stopPropagation()
+}
+div.forEach(n => n.addEventListener('click', sayhi, {once:true}))
 </script>
 </body>
 </html>

@@ -28,6 +28,27 @@
 
   <script>
     // 👀👀👀👀👀👀👀👀👀👀👀👀👀👀👀
+    const trigger = document.querySelectorAll('a')
+    const span = document.createElement("span")
+    span.classList.add('highlight')
+    document.body.appendChild(span)
+
+    function highLighting(){
+      console.log(this)
+      const linkCoords = this.getBoundingClientRect()
+
+      const obj={
+        left: linkCoords.left + window.scrollX,
+        top: linkCoords.top + window.scrollY
+      }
+
+      span.style.width = `${linkCoords.width}px`
+      span.style.height = `${linkCoords.height}px`
+      span.style.transform = `translate(${obj.left}px, ${obj.top}px)`
+    }
+    
+    trigger.forEach(word => word.addEventListener("mouseenter", highLighting))
+
   </script>
 </body>
 </html>

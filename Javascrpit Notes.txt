@@ -1674,7 +1674,7 @@ return an object ???
 forEach()
 
 The forEach() method executes a provided function once for each array element.
-  
+
 -------------------------------------------1/3 
  write functions to sort / replace
 
@@ -1690,5 +1690,18 @@ need to return something while using map
 
 Array method needs a variable to save the results (exp map, sort)
 
+________________
+Stripe
+<Nav>
+<a href="/html/">HTML</a> |
+<a href="/css/">CSS</a> |
+defines a set of navigation links
 
+this.getBoundingClientRect()
+get the size of hyper link
+
+transform = `translate(x,y)`
+to move the span element showing in the document
+
+_________
  

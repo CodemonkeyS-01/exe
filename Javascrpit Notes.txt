@@ -1717,5 +1717,19 @@ transform : scale(1)
 max-width: 500px
 some of them need px after it 
 
+bubbling 
+when an eventListener is added to the multiple nested element
+brower will do capture to dribble down
+from body to the last element you clicked 
+then trigger sth bubbling it back 
+
+
+capture default is false 
+True is response downward 
+e.stopPropagation() stop bubbling up 
+once:true
+only trigger once then delete eventListener
+
+
 ________________-
 

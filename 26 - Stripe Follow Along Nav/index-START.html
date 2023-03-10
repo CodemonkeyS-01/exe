@@ -7,6 +7,7 @@
 </head>
 <body>
   <h2>Cool</h2>
+  <h1>Nothing special</h1>
   <nav class="top">
     <div class="dropdownBackground">
       <span class="arrow"></span>
@@ -143,6 +144,11 @@
     display: none;
   }
 
+  .dropdown .open{
+    opacity: 1;
+    display: block;
+  }
+
   .trigger-enter .dropdown {
     display: block;
   }
@@ -226,13 +232,34 @@
   const  ul = document.querySelectorAll('.cool > li')
   
 function mouseEnter(){
-  const 
-  console.log('Assault')
+   
+  this.classList.add('trigger-enter')
+  setTimeout(() => {
+    this.classList.add('trigger-enter-active')
+  }, 100);
   white.classList.add('open')
+  
+  const dropdown = this.querySelector('.dropdown')
+  const dropdowncoord = dropdown.getBoundingClientRect()
+  const navcoord = nav.getBoundingClientRect() 
+  console.log(dropdowncoord)
+  
+  const coord = {
+    height: dropdowncoord.height,
+    width: dropdowncoord.width,
+    top: dropdowncoord.top - navcoord.top,
+    left: dropdowncoord.left - navcoord.left
+  }
+
+  white.style.setProperty("height", `${coord.height}px`) 
+  white.style.setProperty("width", `${coord.width}px`)
+  white.style.setProperty("transform", `translate(${coord.left}px,${coord.top}px`)
 }
 
+
 function mouseLeave(){
-  console.log('run')
+  this.classList.remove('trigger-enter')
+  this.classList.remove('trigger-enter-active')
   white.classList.remove('open')
 }
 

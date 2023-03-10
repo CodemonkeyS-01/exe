@@ -1719,3 +1719,17 @@ some of them need px after it
 
 ________________-
 
+Call test method on regular expression
+/^\d+$/.test(str)   number only
+/^[A-Za-z\s]*$/.test(str)   character only
+The / and / characters are used to start and end a regular expression.
+The ^ character marks the beginning of the string input, and the $ character marks the end of it.
+
+The \d pattern matches any digit (0 – 9) in the string.
+[0-9]
+          * for character check
+Adding the + character after the \d makes the regex match one or more occurrences of the \d pattern.
+So the regex matches a string that starts and ends with a consecutive sequence of digits.
+
+
+

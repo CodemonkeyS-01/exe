@@ -1746,5 +1746,42 @@ Adding the + character after the \d makes the regex match one or more occurrence
 So the regex matches a string that starts and ends with a consecutive sequence of digits.
 
 
-
 ____________________________
+event.pageX
+event.pageY
+Get the coordinates of the mouse pointer when a mouse button is clicked
+
+offsetLeft 
+ doesn't count the margin
+
+e.preventDefault() 
+preventing clicking on text
+
+let scrollLeft
+on mouse down
+set scrollLeft = slider.scrollLeft 
+startX = e.pageX - slider.offsetLeft
+
+when mouse move
+const x = e.pageX - slider.offsetLeft
+const walk = (x - startX) *4
+slider.scrollLeft = scrollLeft - walk
+
+operator cannot be stroed in a variable
+
+___________________
+
+let y = e.pageY(actual curror y position) - 
+this.offsetTop(distance between upperline of the target and top of the page)
+
+Typically, offsetHeight is a measurement in pixels of the element's CSS height, 
+including any borders, padding, and horizontal scrollbars (if rendered).
+ It does not include the height of pseudo-elements such as ::before or ::after .
+
+ The offsetTop property returns the top position (in pixels) relative to the parent.
+
+The returned value includes:
+
+the top position, and margin of the element
+the top padding, scrollbar and border of the parent
+The offsetTop property is read-only.
